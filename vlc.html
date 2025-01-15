@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نصيحة لتشغيل الفيديوهات باستخدام VLC</title>
+    <style>
+        /* إعدادات الخطوط والتنسيقات الأساسية */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            direction: rtl; /* الاتجاه للكتابة من اليمين لليسار */
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 700px;
+            width: 90%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease, background 1s ease-in-out;
+        }
+
+        /* تأثير الاهتزاز مع الألوان المتدرجة */
+        .container:hover {
+            animation: shakeWithColor 1.2s ease-in-out forwards;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes shakeWithColor {
+            0% {
+                transform: scale(1);
+                background: rgba(255, 102, 0, 0.8); /* بداية الألوان */
+                opacity: 1;
+            }
+            25% {
+                transform: translateX(-12px);
+                background: rgba(0, 204, 255, 0.8); /* تغيير اللون */
+            }
+            50% {
+                transform: translateX(12px);
+                background: rgba(0, 255, 204, 0.8); /* تغيير اللون */
+            }
+            75% {
+                transform: translateX(-6px);
+                background: rgba(255, 255, 0, 0.8); /* تغيير اللون */
+            }
+            100% {
+                transform: translateX(6px);
+                background: rgba(255, 0, 204, 0.8); /* تغيير اللون */
+            }
+        }
+
+        h1 {
+            font-size: 38px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .vlc-icon {
+            font-size: 90px;
+            color: #ff6600;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        /* تأثير للأنيميشن على الأيقونة */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .vlc-button {
+            background: #ff6600;
+            color: white;
+            padding: 18px 28px;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .vlc-button:hover {
+            background: #e65c00;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        footer a {
+            color: #ff6600;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* التنسيق للكتابة باللغة الإنجليزية */
+        body[lang="en"] {
+            direction: ltr; /* اتجاه الكتابة من اليسار لليمين */
+        }
+
+        .container.en {
+            text-align: left; /* محاذاة النص لليسار عند الكتابة بالإنجليزية */
+        }
+    </style>
+</head>
+<body lang="ar">
+    <div class="container">
+        <div class="vlc-icon">🎥</div>
+        <h1>أفضل طريقة لتشغيل الفيديوهات</h1>
+        <p>إذا كنت ترغب في تشغيل الفيديوهات بأعلى جودة وكفاءة، ننصح باستخدام برنامج <strong>VLC</strong> الشهير.</p>
+        <p>VLC هو مشغل وسائط مجاني مفتوح المصدر يدعم جميع تنسيقات الفيديو والصوت ويتميز بالعديد من الخصائص مثل الترجمة، التحكم في سرعة التشغيل، والمزيد.</p>
+        <p>لا تضيع وقتك مع مشغلات الفيديو الأخرى، قم بتثبيت <strong>VLC</strong> الآن واستمتع بتجربة مشاهدة مذهلة!</p>
+        <a href="https://get.videolan.org/vlc/3.0.21/win64/vlc-3.0.21-win64.exe" class="vlc-button" target="_blank">تحميل VLC الآن</a>
+        <footer>
+            <p>  الموقع الرسمي <a href="https://www.videolan.org/" target="_blank">VLC Official Website</a></p>
+        </footer>
+    </div>
+
+
+</body>
+</html>

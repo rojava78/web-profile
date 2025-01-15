@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Profile</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #4CAF50, #2F8F9D, #1E2749);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden; /* إخفاء شريط التمرير على الصفحة بالكامل */
+            perspective: 1500px;
+        }
+
+        .profile-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            max-height: 600px;
+            overflow-y: auto; /* تفعيل التمرير */
+            transform-style: preserve-3d;
+            transition: transform 0.3s ease-in-out, background 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .profile-card::-webkit-scrollbar {
+            width: 0px;  /* إخفاء شريط التمرير */
+            height: 0px;
+        }
+
+        .profile-card::-webkit-scrollbar-thumb {
+            background: transparent; /* إخفاء الكف الخاص بشريط التمرير */
+        }
+
+        .profile-card::-webkit-scrollbar-track {
+            background: transparent; /* إخفاء مسار شريط التمرير */
+        }
+
+        .profile-card:hover {
+            transform: rotateY(10deg) rotateX(10deg);
+            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff9190, #ffe29f);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: rotateY(10deg) rotateX(10deg);
+            }
+            50% {
+                transform: rotateY(0deg) rotateX(0deg);
+            }
+        }
+
+        .profile-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-card h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #FFD700;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .profile-card p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #F4F4F4;
+        }
+
+        .profile-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            color: #FFDB58;
+        }
+
+        .profile-card ul li {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            line-height: 1.8;
+            text-transform: capitalize;
+        }
+
+        .profile-card .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .profile-card .social-links a {
+            color: white;
+            font-size: 1.6rem;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .profile-card .social-links a:hover {
+            color: #FFD700;
+            transform: translateY(-5px);
+        }
+
+        .profile-card a {
+            color: #FFD700;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .profile-card a:hover {
+            color: #FF6347;
+        }
+
+        footer {
+            display: none; /* إخفاء النص */
+        }
+
+        /* Scroll Animations */
+        .animate-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .animate-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 600px) {
+            .profile-card {
+                max-width: 90%;
+                padding: 20px;
+            }
+
+            .profile-card img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .profile-card h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card animate-scroll">
+        <img src="profile.jpg" alt="Personal Image">
+        <h1>D. Ciwan Efrin</h1>
+        <p>Software Developer</p>
+        <p>Hello, I am a specialist in software development (desktop - web - mobile - cyber security).</p>
+        <p>Address: <strong>KURDISTAN</strong></p>
+        <p>Email: <a href="mailto:efrinrojava998@gmail.com">efrinrojava998@gmail.com</a></p>
+        <h2>Skills</h2>
+        <ul>
+            <li>Artificial Intelligence</li>
+            <li>Project Monitoring</li>
+            <li>Programmatic Project Management</li>
+            <li>Network Security</li>
+        </ul>
+        <h2>Social Media Links</h2>
+        <div class="social-links">
+            <a href="#" target="_blank">🔗 Twitter</a>
+            <a href="https://www.facebook.com/BlueEliteTech.home" target="_blank">🔗 Facebook</a>
+            <a href="https://www.linkedin.com/company/blue-elite-tech/" target="_blank">🔗 LinkedIn</a>
+        </div>
+    </div>
+
+    <script>
+        // Scroll Animation Trigger
+        const scrollElements = document.querySelectorAll('.animate-scroll');
+
+        function animateOnScroll() {
+            scrollElements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+
+                if (elementPosition < screenPosition) {
+                    element.classList.add('visible');
+                } else {
+                    element.classList.remove('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll();
+
+        // Mouse movement effect
+        const profileCard = document.querySelector('.profile-card');
+
+        profileCard.addEventListener('mousemove', (e) => {
+            const cardRect = profileCard.getBoundingClientRect();
+            const mouseX = e.clientX - cardRect.left;
+            const mouseY = e.clientY - cardRect.top;
+
+            const rotateX = ((mouseY / cardRect.height) - 0.5) * 20;
+            const rotateY = ((mouseX / cardRect.width) - 0.5) * -20;
+
+            profileCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        profileCard.addEventListener('mouseleave', () => {
+            profileCard.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        });
+    </script>
+</body>
+</html>
